@@ -1,8 +1,8 @@
 <?php
+include 'includes/head.php';
+$title = "Login";
 
-  include 'includes/db.php';
   session_start();
-
   if (isset($_POST['login'])){
 
     $username = $_POST['username'];
@@ -25,26 +25,32 @@
 
     }
 
+    $password = crypt($password, $db_password);
+
     if ($username === $db_username && $password === $db_password) {
+      $_SESSION['userid'] = $db_id;
       $_SESSION['username'] = $db_username;
      header("Location: welcome.php");
     }
     else {
-    header("Location: login.php");
+    $errorMessage = "That user does not exist";
     }
 
 
   }
-  $title = "Login";
  ?>
- <?php include 'includes/head.php'; ?>
+
 
   <body>
     <form class="login animated flipInX" action="login.php" method="post">
       <h3>Login</h3>
-      <input type="text" name="username" placeholder="Username" autofocus>
-      <input type="password" name="password" placeholder="Password">
+        <input type="text" name="username" placeholder="Username" autofocus>
+        <input type="password" name="password" placeholder="Password">
         <input type="submit" name="login" value="Login">
+        <a class="register" href="register.php">Have account?</a>
       </form>
+      <?php if ($errorMessage) : ?>
+      <div class="alert flipInX"><?php echo $errorMessage; ?></div>
+    <?php endif; ?>
   </body>
 </html>

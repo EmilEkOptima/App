@@ -14,8 +14,10 @@ body{
   justify-content: center;
   align-items: center;
   margin: 0;
-
-
+  flex-direction: column;
+}
+#normal {
+  display: block;
 }
 .login{
   background: #ecf0f1;
@@ -44,4 +46,124 @@ body{
 }
 .login input[type=submit]:hover{
   background: #16a005;
+}
+.register {
+  text-align: center;
+  display: block;
+  background: #ecf0f1;
+  padding-top: 20px;
+  width: 100%;
+  border-radius: 8px;
+}
+.alert{
+  font-family: sans-serif;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  width: 320px;
+  padding-top: 20px;
+  background: Red;
+  height: 60px;
+  margin-top: 100px;
+  border-radius: 20px;
+}
+
+.heading{
+	width: 50%;
+	margin: 30px auto;
+  margin-top: 300px;
+  padding: 10px;
+	text-align: center;
+	color: 	#fff;
+	background: #242424;
+	border: none;
+	border-radius: 20px;
+}
+.input_form{
+	width: 50%;
+	margin: 30px auto;
+	border-radius: 5px;
+	padding: 10px;
+	background: #242424;
+}
+form p {
+	color: red;
+	margin: 0px;
+}
+.task_input {
+	width: 75%;
+	height: 15px;
+	padding: 10px;
+	border: 2px solid #fff;
+}
+.add_btn {
+	height: 39px;
+	background: #242424;
+	color: 	#fff;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	padding: 5px 20px;
+}
+
+table {
+    width: 50%;
+    margin: 30px auto;
+    border-collapse: collapse;
+}
+
+tr {
+	border-bottom: 1px solid #fff;
+}
+
+th {
+	font-size: 19px;
+	color: #6B8E23;
+}
+
+th, td{
+	border: none;
+    height: 30px;
+    padding: 2px;
+}
+
+tr:hover {
+	background: #E9E9E9;
+}
+
+.task {
+	text-align: left;
+}
+
+.delete{
+	text-align: center;
+}
+.delete a{
+	color: white;
+	background: #a52a2a;
+	padding: 1px 6px;
+	border-radius: 3px;
+	text-decoration: none;
+}
+
+nav{
+  background: #242424;
+  color: #fff;
+  height: 80px;
+  line-height: 80px;
+  padding: 0 20px;
+  position: relative;
+  text-align: center;
+}
+
+nav h1{
+  margin: 0 auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+nav a{
+  color: #ddd;
+  float: right;
 }
