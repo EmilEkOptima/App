@@ -14,4 +14,8 @@ function checksusername($username){
   }
 }
 
+function isAuthenticated() {
+
+}
+
  ?>

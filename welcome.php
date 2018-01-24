@@ -2,36 +2,38 @@
   session_start();
 
   $title = "Welcome";
-  
-  // initialize errors variable
- $errors = "No task was filled";
 
- // connect to database
- $db = mysqli_connect("localhost", "root", "root", "appdb");
+   include 'includes/head.php';
+
+  // initialize errors variable
+ $errors = "Fill in task here";
+
 
    // insert a quote if submit button is clicked
    if (isset($_POST['submit'])) {
      if (empty($_POST['task'])) {
        $errors = "You must fill in the task";
-     }else{
+     }
+     else{
        $task = $_POST['task'];
        $sql = "INSERT INTO tasks (task, userid) VALUES ('$task', '{$_SESSION['userid']}')";
-       mysqli_query($db, $sql);
+       mysqli_query($connection, $sql);
        header('location: welcome.php');
      }
    }
-   // delete task
-  if (isset($_GET['del_task'])) {
-  	$id = $_GET['del_task'];
 
-  	mysqli_query($db, "DELETE FROM tasks WHERE id=".$id);
-  	header('location: welcome.php');
-  }
+   // delete task
+//  if (isset($_GET['del_task']) && isset($_SESSION['username'])) {
+//  	$id = $_GET['del_task'];
+
+//  	mysqli_query($db, "DELETE FROM tasks WHERE id=".$id);
+//  	header('location: welcome.php');
+//  }
 
 ?>
 
 
- <?php include 'includes/head.php'; ?>
+
   <body id="normal">
 
     <nav>
@@ -65,14 +67,15 @@
 	<tbody>
 		<?php
 		// select all tasks if page is visited or refreshed
-		$tasks = mysqli_query($db, "SELECT * FROM tasks WHERE userid = {$_SESSION['userid']}");
+		$tasks = mysqli_query($connection, "SELECT * FROM tasks WHERE userid = {$_SESSION['userid']}");
 
 		$i = 1; while ($row = mysqli_fetch_array($tasks)) { ?>
 			<tr>
 				<td> <?php echo $i; ?> </td>
 				<td class="task"> <?php echo $row['task']; ?> </td>
 				<td class="delete">
-					<a href="welcome.php?del_task=<?php echo $row['id'] ?>">x</a>
+					<a href="delete.php?del_task=<?php echo $row['id']; ?>">x</a>
+          <a href="edit.php?edit_task=<?php echo $row['id']; ?>&taskname=<?php echo $row['task']; ?>">Edit</a>
 				</td>
 			</tr>
 		<?php $i++; } ?>
