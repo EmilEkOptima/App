@@ -11,7 +11,7 @@
 
     $query = "UPDATE tasks SET task='$newTaskName' WHERE id=$taskID";
     $editTaskQuery = mysqli_query($connection, $query);
-    header("Location: welcome.php");
+    header("Location: admin.php");
   }
 
  ?>
@@ -21,7 +21,7 @@
    <input type="hidden" name="taskID" value="<?php echo $taskID; ?>">
    <input type="text" name="taskname" value="<?php echo $currentTaskName; ?>">
    <input type="submit" name="editTask" value="Change">
-   <a href="welcome.php">Back</a>
+   <a href="admin.php">Back</a>
  </form>
 
 </body>

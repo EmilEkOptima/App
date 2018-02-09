@@ -1,14 +1,17 @@
 
 html, body{
   height: 100%;
+  background: #232526;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 /*Layout Screen*/
 #splashScreen{
   background: #3C3B3F;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #605C3C, #3C3B3F);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  background: -webkit-linear-gradient(to right, #605C3C, #3C3B3F);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -28,6 +31,32 @@ background: linear-gradient(to right, #605C3C, #3C3B3F); /* W3C, IE 10+/ Edge, F
   height: 33.333333333%;
   width: 33.333333333%;
 }
+#splashScreen blockquote{
+  color: white;
+  font-family: 'PT Sans', sans-serif;
+  margin: 0;
+}
+#quote{
+  font-size: 24px;
+  margin: 0;
+}
+#quote:before #quote:after{
+    display: inline-block;
+}
+#quote:before{
+  content: "”";
+  margin: 0 5px 0 0;
+}
+#quote:after{
+  content: "”";
+}
+#author{
+  font-size: 14px;
+}
+#author:before{
+  content:"——";
+  margin: 0;
+}
 /*Landing page*/
 video {
   object-fit: cover;
@@ -41,8 +70,37 @@ video {
   top: 0;
 }
 
-main {
-  width: 520px;
+.NavbarLogo{
+height: 100px;
+}
+
+h2{
+}
+
+section{
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 25px;
+}
+
+.delete{
+
+}
+
+main{
+  text-align: center;
+}
+
+main img{
+ margin: 0 /*<- Top*/ auto /*<- Right & left*/ 40px; /*<- Bottom*/
+}
+
+main p{
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+  font-family: 'PT Sans', sans-serif;
 }
 
 /*Animations*/

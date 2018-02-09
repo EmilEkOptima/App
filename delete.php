@@ -11,7 +11,7 @@
      	$id = $_POST['del_task'];
 
       mysqli_query($connection, "DELETE FROM tasks WHERE id=".$id);
-    	header('location: welcome.php');
+    	header('location: admin.php');
   }
 
   // if (!empty($_POST)) {
@@ -27,7 +27,7 @@
    <input type="hidden" name="del_task" value="<?php echo $id; ?>">
    <h2>Are you sure?</h2>
    <input type="submit" name="deleteTask" value="Ja">
-   <a href="welcome.php">Nej</a>
+   <a href="admin.php">Nej</a>
  </form>
 
 </body>

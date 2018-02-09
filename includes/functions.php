@@ -18,4 +18,18 @@ function isAuthenticated() {
 
 }
 
+function TitleCheck(){
+  $username = $_SESSION['username'];
+
+  $hi = substr("$username", -1);
+    if (isset($_SESSION['username'])) {
+
+      if ($hi == "s" || $hi == "S") {
+        $title = $username . ' tasks';
+      }
+      else {
+        $title = $username . 's tasks';
+      }
+    }
+}
  ?>

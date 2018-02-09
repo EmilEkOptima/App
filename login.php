@@ -1,6 +1,7 @@
 <?php
-include 'includes/head.php';
 $title = "Login";
+include 'includes/head.php';
+
 
   session_start();
   if (isset($_POST['login'])){
@@ -30,7 +31,7 @@ $title = "Login";
     if ($username === $db_username && $password === $db_password) {
       $_SESSION['userid'] = $db_id;
       $_SESSION['username'] = $db_username;
-     header("Location: welcome.php");
+     header("Location: admin.php");
     }
     else {
     $errorMessage = "That user does not exist";
